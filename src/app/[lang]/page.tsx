@@ -1,13 +1,14 @@
-import { getDictionary } from "@/i18n/server";
+import About from "@/components/home/About";
+import Hero from "@/components/home/Hero";
+import Skills from "@/components/home/Skills";
 
-// Temporary home page; the real sections arrive in stage 7
-export default async function Home() {
-  const dict = await getDictionary();
-
+// Home page: each section is its own component; featured projects arrive with the database stage
+export default function Home() {
   return (
-    <section className="py-24">
-      <h1 className="text-4xl font-semibold tracking-tight">{dict.home.title}</h1>
-      <p className="mt-4 text-lg text-muted">{dict.home.subtitle}</p>
-    </section>
+    <>
+      <Hero />
+      <About />
+      <Skills />
+    </>
   );
 }

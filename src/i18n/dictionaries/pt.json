@@ -7,14 +7,56 @@
     "skipToContent": "Pular para o conteúdo"
   },
   "header": {
-    "languageLabel": "Idioma"
+    "languageLabel": "Idioma",
+    "navLabel": "Principal",
+    "nav": {
+      "about": "Sobre",
+      "skills": "Habilidades"
+    }
   },
   "footer": {
     "socialLabel": "Redes",
     "builtWith": "Feito com Next.js e Tailwind CSS"
   },
-  "home": {
-    "title": "Olá, eu sou o Leonardo.",
-    "subtitle": "Desenvolvedor back-end e de jogos. Este site está em construção."
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "tagline": "Desenvolvedor com foco em back-end e jogos, com experiência em sistemas industriais, web e automação."
+  },
+  "about": {
+    "heading": "Sobre mim",
+    "paragraphs": [
+      "Sou o Leonardo, formado em Ciência da Computação pela FEI em 2023. Por quase três anos fui desenvolvedor na SPI Integração de Sistemas, criando sistemas para o chão de fábrica — principalmente MES, para clientes como CVale e Cummins —, além de sites e automações (RPA).",
+      "Em 2025 fiz um intercâmbio de um ano e meio na Irlanda, onde conquistei o certificado B2 de Cambridge e vivi num ambiente internacional, o que fortaleceu minha comunicação e minha adaptabilidade.",
+      "De volta ao Brasil, busco novas oportunidades como desenvolvedor, com foco em back-end e desenvolvimento de jogos. Gosto de desafios, trabalho bem em equipe e sou determinado."
+    ]
+  },
+  "skills": {
+    "heading": "Habilidades",
+    "groups": [
+      {
+        "title": "Linguagens",
+        "items": ["C#", "JavaScript", "TypeScript", "Java", "Python", "SQL"]
+      },
+      {
+        "title": "Back-end e dados",
+        "items": ["Node.js", "SQL Server", "Oracle", "PostgreSQL", "Prisma"]
+      },
+      {
+        "title": "Front-end",
+        "items": ["React", "Next.js", "HTML", "CSS", "Tailwind CSS"]
+      },
+      {
+        "title": "Jogos",
+        "items": ["Unity"]
+      },
+      {
+        "title": "Ferramentas",
+        "items": ["Git", "DELMIA Apriso (MES)", "UiPath (RPA)", "VS Code"]
+      },
+      {
+        "title": "Idiomas",
+        "items": ["Português (nativo)", "Inglês (B2 — Cambridge)"]
+      }
+    ]
   }
 }

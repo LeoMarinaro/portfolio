@@ -1,12 +1,5 @@
 import { getDictionary } from "@/i18n/server";
-
-const socialLinks = [
-  { name: "GitHub", href: "https://github.com/LeoMarinaro" },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/leonardo-pilotto-marinaro-507a211b4/",
-  },
-];
+import { socialLinks } from "@/lib/site";
 
 export default async function Footer() {
   const dict = await getDictionary();

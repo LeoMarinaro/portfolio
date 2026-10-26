@@ -7,14 +7,56 @@
     "skipToContent": "Skip to content"
   },
   "header": {
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "navLabel": "Main",
+    "nav": {
+      "about": "About",
+      "skills": "Skills"
+    }
   },
   "footer": {
     "socialLabel": "Social",
     "builtWith": "Built with Next.js and Tailwind CSS"
   },
-  "home": {
-    "title": "Hi, I'm Leonardo.",
-    "subtitle": "Back-end and game developer. This site is under construction."
+  "hero": {
+    "greeting": "Hi, I'm",
+    "tagline": "Developer focused on back-end and games, with experience in industrial systems, web, and automation."
+  },
+  "about": {
+    "heading": "About me",
+    "paragraphs": [
+      "I'm Leonardo, and I graduated in Computer Science from FEI in 2023. For almost three years I worked as a developer at SPI Integração de Sistemas, building shop-floor systems — mainly MES, for clients such as CVale and Cummins — as well as websites and automations (RPA).",
+      "In 2025 I spent a year and a half in Ireland, where I earned the Cambridge B2 English certificate and lived in an international environment that strengthened my communication and adaptability.",
+      "Back in Brazil, I'm looking for new opportunities as a developer, focusing on back-end and game development. I enjoy challenges, work well in a team, and am determined."
+    ]
+  },
+  "skills": {
+    "heading": "Skills",
+    "groups": [
+      {
+        "title": "Languages",
+        "items": ["C#", "JavaScript", "TypeScript", "Java", "Python", "SQL"]
+      },
+      {
+        "title": "Back-end & data",
+        "items": ["Node.js", "SQL Server", "Oracle", "PostgreSQL", "Prisma"]
+      },
+      {
+        "title": "Front-end",
+        "items": ["React", "Next.js", "HTML", "CSS", "Tailwind CSS"]
+      },
+      {
+        "title": "Games",
+        "items": ["Unity"]
+      },
+      {
+        "title": "Tools",
+        "items": ["Git", "DELMIA Apriso (MES)", "UiPath (RPA)", "VS Code"]
+      },
+      {
+        "title": "Spoken languages",
+        "items": ["Portuguese (native)", "English (B2 — Cambridge)"]
+      }
+    ]
   }
 }

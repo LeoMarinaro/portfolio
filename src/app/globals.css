@@ -37,3 +37,11 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Smooth scrolling for the header's #anchor links, except for people who
+   asked their system to reduce motion (an accessibility setting) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

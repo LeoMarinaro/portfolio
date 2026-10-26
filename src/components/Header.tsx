@@ -16,7 +16,24 @@ export default async function Header() {
         >
           Leonardo Marinaro
         </Link>
-        <LanguageSwitcher current={locale} label={dict.header.languageLabel} />
+        <div className="flex items-center gap-6">
+          {/* Hidden on small screens to keep the header uncluttered; the sections are on the same page */}
+          <nav aria-label={dict.header.navLabel} className="hidden sm:block">
+            <ul className="flex gap-6 text-sm text-muted">
+              <li>
+                <Link href={`/${locale}#about`} className="transition-colors hover:text-accent">
+                  {dict.header.nav.about}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}#skills`} className="transition-colors hover:text-accent">
+                  {dict.header.nav.skills}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <LanguageSwitcher current={locale} label={dict.header.languageLabel} />
+        </div>
       </div>
     </header>
   );
