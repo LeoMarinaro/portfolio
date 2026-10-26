@@ -55,7 +55,17 @@
     "learnedHeading": "O que aprendi",
     "viewCode": "Ver código",
     "viewLive": "Ver online",
-    "back": "Voltar para projetos"
+    "back": "Voltar para projetos",
+    "repoStats": "Dados do repositório",
+    "stars": "Estrelas",
+    "language": "Linguagem principal",
+    "updated": "Última atualização"
+  },
+  "github": {
+    "heading": "No GitHub",
+    "intro": "Outros repositórios públicos que selecionei, com dados atualizados direto da API do GitHub.",
+    "viewRepo": "Ver repositório",
+    "noDescription": "Sem descrição."
   },
   "skills": {
     "heading": "Habilidades",

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getLocale } from "@/i18n/server";
+import { formatMonthYear } from "@/lib/format";
+import { getRepo } from "@/lib/github";
 import { getProject, getProjectSlugs } from "@/lib/projects";
 
 // Builds one static page per project found in the database at build time
@@ -30,6 +32,9 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
 
   // Unknown slug (or no text in this language): show the 404 page
   if (!project) notFound();
+
+  // Live GitHub data for projects linked to a repository (null if none or if GitHub is unreachable)
+  const repo = project.githubRepo ? await getRepo(project.githubRepo) : null;
 
   const labels = dict.projects;
 
@@ -76,6 +81,28 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
             </li>
           )}
         </ul>
+      )}
+
+      {repo && (
+        <dl
+          aria-label={labels.repoStats}
+          className="mt-8 grid grid-cols-3 gap-4 rounded-lg border border-border p-4 text-sm"
+        >
+          <div>
+            <dt className="text-muted">{labels.stars}</dt>
+            <dd className="mt-1 font-mono">★ {repo.stars}</dd>
+          </div>
+          <div>
+            <dt className="text-muted">{labels.language}</dt>
+            <dd className="mt-1 font-mono">{repo.language ?? "—"}</dd>
+          </div>
+          <div>
+            <dt className="text-muted">{labels.updated}</dt>
+            <dd className="mt-1 font-mono">
+              <time dateTime={repo.pushedAt}>{formatMonthYear(repo.pushedAt, locale)}</time>
+            </dd>
+          </div>
+        </dl>
       )}
 
       <p className="mt-10 leading-relaxed">{project.description}</p>

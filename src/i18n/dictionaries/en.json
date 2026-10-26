@@ -55,7 +55,17 @@
     "learnedHeading": "What I learned",
     "viewCode": "View code",
     "viewLive": "View live",
-    "back": "Back to projects"
+    "back": "Back to projects",
+    "repoStats": "Repository data",
+    "stars": "Stars",
+    "language": "Main language",
+    "updated": "Last updated"
+  },
+  "github": {
+    "heading": "On GitHub",
+    "intro": "Other public repositories I selected, with data updated straight from the GitHub API.",
+    "viewRepo": "View repository",
+    "noDescription": "No description."
   },
   "skills": {
     "heading": "Skills",
