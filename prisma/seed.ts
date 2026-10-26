@@ -69,18 +69,18 @@ const projects: SeedProject[] = [
       pt: {
         title: "Telas MES para a CVale",
         summary:
-          "Interfaces de um sistema MES para monitorar e controlar processos industriais da CVale.",
+          "Telas de um sistema MES para monitorar e controlar diferentes áreas da produção da CVale.",
         description:
-          "Desenvolvimento e implementação de telas para o sistema MES (Manufacturing Execution System) da CVale, usado para monitorar e controlar processos industriais no chão de fábrica. Construí o front-end em HTML, CSS e JavaScript e a lógica de back-end em C# com SQL Server, sobre a plataforma DELMIA Apriso. O objetivo era dar mais eficiência e visibilidade às operações da fábrica.",
+          "Desenvolvimento e implementação de telas para o sistema MES (Manufacturing Execution System) da CVale, cobrindo várias áreas do processo industrial no chão de fábrica. Construí o front-end em HTML, CSS e JavaScript e a lógica de back-end em C# com SQL Server, sobre a plataforma DELMIA Apriso. O objetivo era dar mais eficiência e visibilidade às operações da fábrica.",
         learned:
           "Como sistemas de fábrica funcionam na prática e como transformar regras de negócio de um cliente industrial em telas e consultas no banco.",
       },
       en: {
         title: "MES screens for CVale",
         summary:
-          "Interfaces for an MES system that monitors and controls CVale's industrial processes.",
+          "MES screens to monitor and control different areas of CVale's production.",
         description:
-          "Development and rollout of screens for CVale's MES (Manufacturing Execution System), used to monitor and control industrial processes on the shop floor. I built the front-end in HTML, CSS, and JavaScript and the back-end logic in C# with SQL Server, on the DELMIA Apriso platform. The goal was to make the plant's operations more efficient and visible.",
+          "Development and rollout of screens for CVale's MES (Manufacturing Execution System), covering several areas of the industrial process on the shop floor. I built the front-end in HTML, CSS, and JavaScript and the back-end logic in C# with SQL Server, on the DELMIA Apriso platform. The goal was to make the plant's operations more efficient and visible.",
         learned:
           "How factory systems work in practice and how to turn an industrial client's business rules into screens and database queries.",
       },
@@ -97,18 +97,18 @@ const projects: SeedProject[] = [
       pt: {
         title: "Linha de cabeçotes V2 da Cummins",
         summary:
-          "Telas MES para registrar e organizar cabeçotes em caixas virtuais na linha de produção.",
+          "Telas MES que garantem a rastreabilidade de cada cabeçote produzido, organizado em caixas virtuais.",
         description:
-          "Desenvolvimento de telas para a linha de cabeçotes V2 da Cummins, onde cada cabeçote produzido é registrado e organizado em caixas virtuais, melhorando a gestão e a eficiência da linha. O front-end foi feito em HTML, CSS e JavaScript e o back-end em C# com banco Oracle, na plataforma DELMIA Apriso.",
+          "Desenvolvimento de telas para a linha de cabeçotes V2 da Cummins com foco em rastreabilidade: cada cabeçote produzido é registrado e organizado em caixas virtuais, de modo que seja possível saber onde cada peça está e por onde passou. Isso melhorou a gestão e a eficiência da linha. O front-end foi feito em HTML, CSS e JavaScript e o back-end em C# com banco Oracle, na plataforma DELMIA Apriso.",
         learned:
-          "Rastreabilidade de peças em produção e cuidado com a consistência dos dados quando um erro de registro afeta a linha física.",
+          "Rastreabilidade de peças em produção e cuidado com a consistência dos dados quando um erro de registro afeta a linha física. E alto contato com os operadores",
       },
       en: {
         title: "Cummins V2 cylinder head line",
         summary:
-          "MES screens to register and organize cylinder heads into virtual boxes on the production line.",
+          "MES screens that make every produced cylinder head traceable, organized into virtual boxes.",
         description:
-          "Development of screens for Cummins' V2 cylinder head line, where each produced cylinder head is registered and organized into virtual boxes, improving line management and efficiency. The front-end was built in HTML, CSS, and JavaScript and the back-end in C# with an Oracle database, on the DELMIA Apriso platform.",
+          "Development of screens for Cummins' V2 cylinder head line focused on traceability: each produced cylinder head is registered and organized into virtual boxes, so it is possible to know where each part is and where it has been. This improved line management and efficiency. The front-end was built in HTML, CSS, and JavaScript and the back-end in C# with an Oracle database, on the DELMIA Apriso platform.",
         learned:
           "Part traceability in production and care for data consistency when a registration error affects the physical line.",
       },
@@ -124,18 +124,18 @@ const projects: SeedProject[] = [
       pt: {
         title: "Site de consultoria com a CNI",
         summary:
-          "Site de consultoria full-stack com Node.js e SQL Server, incluindo toda a documentação.",
+          "Site full-stack em parceria com a CNI para oferecer serviços de consultoria a outras empresas.",
         description:
-          "Desenvolvimento de um site de consultoria em parceria com a CNI. Fiz o front-end em HTML, CSS e JavaScript e o back-end em Node.js com banco SQL Server, além de escrever toda a documentação do site.",
+          "Desenvolvimento, em parceria com a CNI, de um site de consultoria voltado a outras empresas. Fiz o front-end em HTML, CSS e JavaScript e o back-end em Node.js com banco SQL Server, além de escrever toda a documentação do site.",
         learned:
           "Construir uma aplicação web de ponta a ponta e documentar para que outras pessoas consigam manter.",
       },
       en: {
         title: "Consulting website with CNI",
         summary:
-          "Full-stack consulting website built with Node.js and SQL Server, including complete documentation.",
+          "Full-stack website built in partnership with CNI to offer consulting services to other companies.",
         description:
-          "Development of a consulting website in partnership with CNI. I built the front-end in HTML, CSS, and JavaScript and the back-end in Node.js with a SQL Server database, and wrote the site's complete documentation.",
+          "Development, in partnership with CNI, of a consulting website aimed at other companies. I built the front-end in HTML, CSS, and JavaScript and the back-end in Node.js with a SQL Server database, and wrote the site's complete documentation.",
         learned:
           "Building a web application end to end and documenting it so others can maintain it.",
       },
@@ -150,18 +150,18 @@ const projects: SeedProject[] = [
       pt: {
         title: "Notificações automáticas via WhatsApp",
         summary:
-          "Automação RPA que detecta novos chamados num site e avisa a equipe pelo WhatsApp.",
+          "Automação RPA interna que detecta novos chamados num site e avisa a equipe pelo WhatsApp.",
         description:
-          "Solução de RPA (Automação Robótica de Processos) em UiPath que monitora um site, detecta novos chamados numa tabela e envia uma notificação automática pelo WhatsApp para os funcionários responsáveis, sem que ninguém precise ficar conferindo a página.",
+          "Solução de RPA (Automação Robótica de Processos) em UiPath, criada para uso interno da SPI. O robô monitora um site, detecta novos chamados numa tabela e envia uma notificação automática pelo WhatsApp para os funcionários responsáveis, sem que ninguém precise ficar conferindo a página.",
         learned:
           "Automatizar uma tarefa repetitiva de ponta a ponta e lidar com sistemas que não oferecem uma API.",
       },
       en: {
         title: "Automatic WhatsApp notifications",
         summary:
-          "RPA automation that detects new support tickets on a website and alerts the team on WhatsApp.",
+          "Internal RPA automation that detects new support tickets on a website and alerts the team on WhatsApp.",
         description:
-          "RPA (Robotic Process Automation) solution in UiPath that monitors a website, detects new tickets in a table, and sends an automatic WhatsApp notification to the responsible employees, so nobody has to keep checking the page.",
+          "RPA (Robotic Process Automation) solution in UiPath, built for internal use at SPI. The bot monitors a website, detects new tickets in a table, and sends an automatic WhatsApp notification to the responsible employees, so nobody has to keep checking the page.",
         learned:
           "Automating a repetitive task end to end and working with systems that don't offer an API.",
       },
