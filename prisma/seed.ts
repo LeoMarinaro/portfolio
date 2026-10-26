@@ -101,7 +101,7 @@ const projects: SeedProject[] = [
         description:
           "Desenvolvimento de telas para a linha de cabeçotes V2 da Cummins com foco em rastreabilidade: cada cabeçote produzido é registrado e organizado em caixas virtuais, de modo que seja possível saber onde cada peça está e por onde passou. Isso melhorou a gestão e a eficiência da linha. O front-end foi feito em HTML, CSS e JavaScript e o back-end em C# com banco Oracle, na plataforma DELMIA Apriso.",
         learned:
-          "Rastreabilidade de peças em produção e cuidado com a consistência dos dados quando um erro de registro afeta a linha física. E alto contato com os operadores",
+          "Rastreabilidade de peças em produção e cuidado com a consistência dos dados quando um erro de registro afeta a linha física, além de muito contato direto com os operadores da linha.",
       },
       en: {
         title: "Cummins V2 cylinder head line",
@@ -110,7 +110,7 @@ const projects: SeedProject[] = [
         description:
           "Development of screens for Cummins' V2 cylinder head line focused on traceability: each produced cylinder head is registered and organized into virtual boxes, so it is possible to know where each part is and where it has been. This improved line management and efficiency. The front-end was built in HTML, CSS, and JavaScript and the back-end in C# with an Oracle database, on the DELMIA Apriso platform.",
         learned:
-          "Part traceability in production and care for data consistency when a registration error affects the physical line.",
+          "Part traceability in production and care for data consistency when a registration error affects the physical line, plus a lot of direct contact with the line operators.",
       },
     },
   },
