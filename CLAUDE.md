@@ -61,6 +61,10 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Project content is edited in `prisma/seed.ts` and applied with `npx prisma db seed` (idempotent upserts). The user writes `pt` only; Claude writes `en`.
 - 404s: an unknown project slug renders `[lang]/not-found.tsx` with status 200 + `noindex`, because the partial-prerender shell is already streaming. This is the documented behavior; a true 404 would need a DB lookup in the proxy. Unknown paths hit `[lang]/[...missing]` and return a real 404.
 
+## GitHub integration (agreed 2026-10-26)
+- `src/lib/github.ts` fetches `LeoMarinaro`'s public repos, cached for 1h with tag `github`. It uses `GITHUB_TOKEN` (fine-grained, public read-only) when set, and never throws: on failure the site renders without GitHub data.
+- Repos with the `portfolio` topic on GitHub are listed in the "On GitHub" section of `/projects`, except those already linked from a DB project via `githubRepo`.
+
 ## Visual design (agreed 2026-10-26)
 - Clean minimalist style: generous whitespace, strong typography, and the content is the focus.
 - Fonts: Geist for text and Geist Mono for tech tags. Remove the scaffold's `font-family: Arial` override in `globals.css`.
