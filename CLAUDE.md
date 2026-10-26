@@ -47,4 +47,11 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Footer on every page: GitHub and LinkedIn links. No contact section.
 - Projects come from two sources, merged: GitHub API repositories, and records in PostgreSQL. The database holds bilingual write-ups, the featured flag, and professional projects that have no public code.
 - Positioning: open to any role, with focus on back-end and game development.
-- Visual layout is still undecided. Do not design it until planned together.
+
+## Visual design (agreed 2026-10-26)
+- Clean minimalist style: generous whitespace, strong typography, and the content is the focus.
+- Fonts: Geist for text and Geist Mono for tech tags. Remove the scaffold's `font-family: Arial` override in `globals.css`.
+- Neutrals are Tailwind zinc. The blue accent is `blue-600` in light mode and `blue-400` in dark mode, to keep WCAG contrast.
+- Light background `#ffffff`, dark background `#0a0a0a`. Borders and cards are zinc-200 in light mode and zinc-800 in dark mode.
+- Theme follows the system by default, and a toggle can override it. This needs class-based dark mode, not only `prefers-color-scheme`.
+- Content is centered with a max width of about 768px, with a single column on mobile.
