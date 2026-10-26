@@ -35,7 +35,8 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Project folder: `Portifolio` under `Projetos`.
 - Node.js v24.22.1 and npm 11.19.1 are installed (verified 2026-10-26).
 - Git 2.56.0 is installed (verified 2026-10-26).
-- Local Git repository created on `main` with the scaffold commit. It is not yet on GitHub (no remote).
+- Git repository on `main`, pushed to https://github.com/LeoMarinaro/portfolio (public, remote `origin`).
+- Running `npm` in PowerShell needed `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, which the user has done.
 - Never commit `Curriculo.pdf` or other personal documents (phone number, personal data). Make sure they are git-ignored.
 
 ## Site structure (agreed 2026-10-26)
