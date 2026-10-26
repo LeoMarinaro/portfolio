@@ -42,6 +42,13 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Running `npm` in PowerShell needed `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, which the user has done.
 - Never commit `Curriculo.pdf` or other personal documents (phone number, personal data). Make sure they are git-ignored.
 
+## Remaining work (as of 2026-10-26)
+1. Tests: Vitest 4.1.x (stable line) for pure functions: `summarizeLanguages`, `hasLocale`, and `getPreferredLocale` (move it out of `proxy.ts` into its own module so it can be exported). The plan is that Claude sets up Vitest and writes the `summarizeLanguages` tests as an example, and the user writes the `getPreferredLocale` tests. Async Server Components are not supported by Vitest, so E2E (Playwright) is optional later.
+2. CI: GitHub Actions running lint, tests, and build on every push and PR.
+3. SEO & Lighthouse: sitemap.xml, robots.txt, `hreflang` alternates, Open Graph image, then a Lighthouse check.
+4. README: what it is, stack, architecture, how to run locally (.env vars, seed).
+- Small items: switch `sslmode=require` to `sslmode=verify-full` in `.env` and Vercel. Optional user exercises: wrap the seed in `prisma.$transaction`, and remember the chosen locale in a cookie read by the proxy. Optional: separate Neon branch for dev, and add descriptions plus the `portfolio` topic to other GitHub repos.
+
 ## Site structure (agreed 2026-10-26)
 - `/[lang]` home: hero (name, one-line pitch, links), About me, Skills, 2-3 featured projects.
 - `/[lang]/projects`: all projects with name, description, languages, and stars.
