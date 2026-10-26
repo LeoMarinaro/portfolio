@@ -29,6 +29,8 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 
 ## Next.js version
 - Scaffolded with create-next-app 16.4.3 (Next 16, React 19, Tailwind 4, ESLint 9), using `src/` and the `@/*` alias.
+- The scaffold enabled `cacheComponents` and `partialPrefetching` in `next.config.ts`. Because of that, the `dynamicParams` segment config is not allowed. Unknown params get `notFound()` instead (see `src/i18n/server.ts`).
+- If type checking fails on stale routes in `.next/dev/types`, delete `.next/dev` (it is only a cache).
 - Follow `AGENTS.md`: read the matching guide in `node_modules/next/dist/docs/` before writing Next.js code, because APIs may differ from older versions.
 
 ## Current state
@@ -41,9 +43,10 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Never commit `Curriculo.pdf` or other personal documents (phone number, personal data). Make sure they are git-ignored.
 
 ## Site structure (agreed 2026-10-26)
-- `/` home: hero (name, one-line pitch, links), About me, Skills, 2-3 featured projects.
-- `/projetos` (projects): all projects with name, description, languages, and stars.
-- `/projetos/[slug]`: project detail (what it does, stack, what was learned, code/live links).
+- `/[lang]` home: hero (name, one-line pitch, links), About me, Skills, 2-3 featured projects.
+- `/[lang]/projects`: all projects with name, description, languages, and stars.
+- `/[lang]/projects/[slug]`: project detail (what it does, stack, what was learned, code/live links).
+- i18n follows the official Next 16 guide, with no library. Locales are `pt` (default) and `en`, with every route under `src/app/[lang]/`. Strings live in JSON dictionaries. A `proxy.ts` (Next 16's name for middleware) redirects `/` using `Accept-Language`. Route segment names stay in English for both locales.
 - Footer on every page: GitHub and LinkedIn links. No contact section.
 - Projects come from two sources, merged: GitHub API repositories, and records in PostgreSQL. The database holds bilingual write-ups, the featured flag, and professional projects that have no public code.
 - Positioning: open to any role, with focus on back-end and game development.

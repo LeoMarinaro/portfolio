@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "title": "Leonardo Marinaro — Back-end Developer",
+    "description": "Portfolio of Leonardo Marinaro, a developer focused on back-end and game development."
+  },
+  "layout": {
+    "skipToContent": "Skip to content"
+  },
+  "header": {
+    "languageLabel": "Language"
+  },
+  "footer": {
+    "socialLabel": "Social",
+    "builtWith": "Built with Next.js and Tailwind CSS"
+  },
+  "home": {
+    "title": "Hi, I'm Leonardo.",
+    "subtitle": "Back-end and game developer. This site is under construction."
+  }
+}
