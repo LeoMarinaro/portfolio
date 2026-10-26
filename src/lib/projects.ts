@@ -12,6 +12,7 @@ export type ProjectView = {
   stack: string[];
   githubRepo: string | null;
   liveUrl: string | null;
+  featured: boolean;
   title: string;
   summary: string;
   description: string;
@@ -38,6 +39,7 @@ function toView(project: ProjectWithTranslations): ProjectView | null {
     stack: project.stack,
     githubRepo: project.githubRepo,
     liveUrl: project.liveUrl,
+    featured: project.featured,
     title: text.title,
     summary: text.summary,
     description: text.description,
