@@ -30,6 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# prisma client, regenerated from prisma/schema.prisma by `prisma generate`
+/src/generated/
+
 # personal documents (CV with phone number etc.) must never be published
 /*.pdf
 

@@ -51,6 +51,12 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Projects come from two sources, merged: GitHub API repositories, and records in PostgreSQL. The database holds bilingual write-ups, the featured flag, and professional projects that have no public code.
 - Positioning: open to any role, with focus on back-end and game development.
 
+## Database (agreed 2026-10-26)
+- PostgreSQL on Neon, created through the Vercel Marketplace (Storage tab). Docker is not installed, so there is no local Postgres.
+- Prisma 7.10.1, the latest stable release, pinned. On 2026-10-26 the npm `latest` tag pointed to 8.0.0-rc, a release candidate, so do not install it.
+- Bilingual project data: `Project` holds shared fields, and `ProjectTranslation` holds one row per locale (1-N, unique on `[projectId, locale]`).
+- The connection strings live in `.env` (git-ignored) locally and in Vercel environment variables in production.
+
 ## Visual design (agreed 2026-10-26)
 - Clean minimalist style: generous whitespace, strong typography, and the content is the focus.
 - Fonts: Geist for text and Geist Mono for tech tags. Remove the scaffold's `font-family: Arial` override in `globals.css`.

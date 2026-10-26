@@ -1,0 +1,54 @@
+// Database structure. Changing this file + running `npx prisma migrate dev`
+// creates a migration (a versioned SQL change) and applies it.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+// The connection URL lives in prisma.config.ts (read from environment variables)
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProjectKind {
+  PROFESSIONAL // client work without public code (e.g. MES systems)
+  PERSONAL // own projects, usually with a GitHub repository
+}
+
+// Same values as `locales` in src/i18n/config.ts; the database rejects anything else
+enum Locale {
+  pt
+  en
+}
+
+// Language-independent data shared by every translation of a project
+model Project {
+  id           Int                  @id @default(autoincrement())
+  slug         String               @unique // used in the URL: /pt/projects/[slug]
+  kind         ProjectKind
+  client       String? // company the work was for, e.g. "CVale"
+  stack        String[] // technologies, e.g. ["C#", "SQL Server"]
+  githubRepo   String?              @unique // repository name under github.com/LeoMarinaro, merged with GitHub API data
+  liveUrl      String?
+  featured     Boolean              @default(false) // shown on the home page
+  sortOrder    Int                  @default(0) // lower numbers appear first
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  translations ProjectTranslation[] // one row per locale (1-N relation)
+}
+
+// Text that changes with the language: one row per project per locale
+model ProjectTranslation {
+  id          Int     @id @default(autoincrement())
+  projectId   Int
+  locale      Locale
+  title       String
+  summary     String // one or two sentences for cards
+  description String // full text for the project page
+  learned     String? // what the project taught, for the project page
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  // A project can't have two translations in the same language
+  @@unique([projectId, locale])
+}
