@@ -65,6 +65,9 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - `src/lib/github.ts` fetches `LeoMarinaro`'s public repos, cached for 1h with tag `github`. It uses `GITHUB_TOKEN` (fine-grained, public read-only) when set, and never throws: on failure the site renders without GitHub data.
 - Repos with the `portfolio` topic on GitHub are listed in the "On GitHub" section of `/projects`, except those already linked from a DB project via `githubRepo`.
 
+## Public API (decided 2026-10-26)
+- A read-only `GET /api/projects` was built and then removed at the user's request, because the site doesn't need it for now. Pages read data directly through `src/lib/projects.ts`. The implementation is in git history (commit `bb54e6d`, reverted) if it is wanted later.
+
 ## Visual design (agreed 2026-10-26)
 - Clean minimalist style: generous whitespace, strong typography, and the content is the focus.
 - Fonts: Geist for text and Geist Mono for tech tags. Remove the scaffold's `font-family: Arial` override in `globals.css`.
