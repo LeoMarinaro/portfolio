@@ -35,6 +35,8 @@ yarn-error.log*
 
 # personal documents (CV with phone number etc.) must never be published
 /*.pdf
+# personal study notes and interview prep
+/Estudo/
 
 # env files (can opt-in for committing if needed)
 .env*
