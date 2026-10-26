@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getLocale } from "@/i18n/server";
+import LanguageBar from "@/components/LanguageBar";
 import { formatMonthYear } from "@/lib/format";
-import { getRepo } from "@/lib/github";
+import { getRepo, getRepoLanguages } from "@/lib/github";
+import { summarizeLanguages } from "@/lib/languages";
 import { getProject, getProjectSlugs } from "@/lib/projects";
 
 // Builds one static page per project found in the database at build time
@@ -34,7 +36,11 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
   if (!project) notFound();
 
   // Live GitHub data for projects linked to a repository (null if none or if GitHub is unreachable)
-  const repo = project.githubRepo ? await getRepo(project.githubRepo) : null;
+  // Both GitHub requests start together instead of one after the other
+  const [repo, languageBytes] = project.githubRepo
+    ? await Promise.all([getRepo(project.githubRepo), getRepoLanguages(project.githubRepo)])
+    : [null, {}];
+  const languages = summarizeLanguages(languageBytes);
 
   const labels = dict.projects;
 
@@ -115,6 +121,12 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
           <p className="mt-3 leading-relaxed">{project.learned}</p>
         </section>
       )}
+
+      <LanguageBar
+        languages={languages}
+        locale={locale}
+        labels={{ heading: labels.languagesHeading, other: labels.otherLanguages }}
+      />
 
       <section aria-labelledby="stack-heading" className="mt-10">
         <h2 id="stack-heading" className="text-xl font-semibold tracking-tight">

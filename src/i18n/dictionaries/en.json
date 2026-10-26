@@ -59,7 +59,9 @@
     "repoStats": "Repository data",
     "stars": "Stars",
     "language": "Main language",
-    "updated": "Last updated"
+    "updated": "Last updated",
+    "languagesHeading": "Repository languages",
+    "otherLanguages": "Other"
   },
   "github": {
     "heading": "On GitHub",

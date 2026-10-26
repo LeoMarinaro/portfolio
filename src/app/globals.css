@@ -13,6 +13,13 @@
   --muted: #52525b; /* zinc-600: secondary text */
   --border: #e4e4e7; /* zinc-200 */
   --accent: #2563eb; /* blue-600 */
+  /* Chart series colors, in fixed order, validated for color-blind separation
+     on this surface (dataviz palette slots 1-4); "other" is a neutral gray */
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-other: #a1a1aa;
 }
 
 :root[data-theme="dark"] {
@@ -22,6 +29,12 @@
   --muted: #a1a1aa; /* zinc-400 */
   --border: #27272a; /* zinc-800 */
   --accent: #60a5fa; /* blue-400: lighter so it keeps contrast on dark */
+  /* Same hues re-stepped for the dark surface (not an automatic inversion) */
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-other: #52525b;
 }
 
 /* Exposes the tokens as Tailwind classes: bg-background, text-muted, border-border, text-accent... */
