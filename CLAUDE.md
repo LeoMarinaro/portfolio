@@ -56,6 +56,10 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Prisma 7.10.1, the latest stable release, pinned. On 2026-10-26 the npm `latest` tag pointed to 8.0.0-rc, a release candidate, so do not install it.
 - Bilingual project data: `Project` holds shared fields, and `ProjectTranslation` holds one row per locale (1-N, unique on `[projectId, locale]`).
 - The connection strings live in `.env` (git-ignored) locally and in Vercel environment variables in production.
+- Local dev and production share the same Neon database for now.
+- Pages read projects only through `src/lib/projects.ts`. Those functions use `"use cache"` + `cacheLife("hours")` + `cacheTag("projects")`, so content edits can take up to an hour to show in production until on-demand revalidation exists.
+- Project content is edited in `prisma/seed.ts` and applied with `npx prisma db seed` (idempotent upserts). The user writes `pt` only; Claude writes `en`.
+- 404s: an unknown project slug renders `[lang]/not-found.tsx` with status 200 + `noindex`, because the partial-prerender shell is already streaming. This is the documented behavior; a true 404 would need a DB lookup in the proxy. Unknown paths hit `[lang]/[...missing]` and return a real 404.
 
 ## Visual design (agreed 2026-10-26)
 - Clean minimalist style: generous whitespace, strong typography, and the content is the focus.

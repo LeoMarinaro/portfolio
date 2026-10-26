@@ -22,6 +22,11 @@ export default async function Header() {
           <nav aria-label={dict.header.navLabel} className="hidden sm:block">
             <ul className="flex gap-6 text-sm text-muted">
               <li>
+                <Link href={`/${locale}/projects`} className="transition-colors hover:text-accent">
+                  {dict.header.nav.projects}
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${locale}#about`} className="transition-colors hover:text-accent">
                   {dict.header.nav.about}
                 </Link>

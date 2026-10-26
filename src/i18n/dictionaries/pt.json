@@ -12,12 +12,18 @@
     "navLabel": "Principal",
     "nav": {
       "about": "Sobre",
-      "skills": "Habilidades"
+      "skills": "Habilidades",
+      "projects": "Projetos"
     }
   },
   "footer": {
     "socialLabel": "Redes",
     "builtWith": "Feito com Next.js e Tailwind CSS"
+  },
+  "notFound": {
+    "heading": "Página não encontrada",
+    "text": "O endereço que você acessou não existe ou foi removido.",
+    "home": "Voltar para o início"
   },
   "hero": {
     "greeting": "Olá, eu sou",
@@ -30,6 +36,26 @@
       "Em 2025 fiz um intercâmbio de um ano e meio na Irlanda, onde conquistei o certificado B2 de Cambridge e vivi num ambiente internacional, o que fortaleceu minha comunicação e minha adaptabilidade.",
       "De volta ao Brasil, busco novas oportunidades como desenvolvedor, com foco em back-end e desenvolvimento de jogos. Gosto de desafios, trabalho bem em equipe e sou determinado."
     ]
+  },
+  "featured": {
+    "heading": "Projetos em destaque",
+    "viewAll": "Ver todos os projetos"
+  },
+  "projects": {
+    "metaTitle": "Projetos — Leonardo Marinaro",
+    "metaDescription": "Projetos profissionais e pessoais de Leonardo Marinaro: sistemas MES, sites, automações e mais.",
+    "heading": "Projetos",
+    "intro": "Trabalhos profissionais feitos para clientes e projetos pessoais. Os profissionais não têm código público, pois pertencem aos clientes.",
+    "kind": {
+      "PROFESSIONAL": "Profissional",
+      "PERSONAL": "Pessoal"
+    },
+    "clientLabel": "Cliente",
+    "stackLabel": "Tecnologias",
+    "learnedHeading": "O que aprendi",
+    "viewCode": "Ver código",
+    "viewLive": "Ver online",
+    "back": "Voltar para projetos"
   },
   "skills": {
     "heading": "Habilidades",
