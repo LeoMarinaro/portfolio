@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { htmlLang, locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/server";
+import { themeScript } from "@/lib/theme";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -39,7 +40,14 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
     <html
       lang={htmlLang[locale]}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      // The theme script adds data-theme before React loads; this tells React
+      // that difference on <html> is expected (it does not affect child elements)
+      suppressHydrationWarning
     >
+      <head>
+        {/* Runs before the first paint so the page never flashes the wrong theme */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         {/* Hidden until focused with Tab, lets keyboard users jump past the header */}
         <a

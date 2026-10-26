@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getDictionary, getLocale } from "@/i18n/server";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 
 // Server Component: reads the locale itself, so the layout doesn't pass it down
 export default async function Header() {
@@ -32,7 +33,10 @@ export default async function Header() {
               </li>
             </ul>
           </nav>
-          <LanguageSwitcher current={locale} label={dict.header.languageLabel} />
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher current={locale} label={dict.header.languageLabel} />
+            <ThemeToggle label={dict.header.themeToggle} />
+          </div>
         </div>
       </div>
     </header>

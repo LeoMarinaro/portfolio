@@ -8,6 +8,7 @@
   },
   "header": {
     "languageLabel": "Language",
+    "themeToggle": "Toggle light/dark theme",
     "navLabel": "Main",
     "nav": {
       "about": "About",

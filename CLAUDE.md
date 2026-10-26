@@ -56,5 +56,5 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 - Fonts: Geist for text and Geist Mono for tech tags. Remove the scaffold's `font-family: Arial` override in `globals.css`.
 - Neutrals are Tailwind zinc. The blue accent is `blue-600` in light mode and `blue-400` in dark mode, to keep WCAG contrast.
 - Light background `#ffffff`, dark background `#0a0a0a`. Borders and cards are zinc-200 in light mode and zinc-800 in dark mode.
-- Theme follows the system by default, and a toggle can override it. This needs class-based dark mode, not only `prefers-color-scheme`.
+- Theme follows the system by default, and a toggle can override it. Implemented with `<html data-theme>`. An inline `<head>` script (`src/lib/theme.ts`) sets it before first paint from `localStorage` or the OS setting. Tailwind's `dark:` variant is remapped to `[data-theme="dark"]` in `globals.css`. Do not render theme-dependent markup from React state, because it causes a hydration mismatch. Use CSS (`dark:`) instead.
 - Content is centered with a max width of about 768px, with a single column on mobile.

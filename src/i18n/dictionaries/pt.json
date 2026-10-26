@@ -8,6 +8,7 @@
   },
   "header": {
     "languageLabel": "Idioma",
+    "themeToggle": "Alternar tema claro/escuro",
     "navLabel": "Principal",
     "nav": {
       "about": "Sobre",
