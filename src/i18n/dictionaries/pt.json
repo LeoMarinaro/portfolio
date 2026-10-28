@@ -1,7 +1,9 @@
 {
   "metadata": {
     "title": "Leonardo Marinaro — Desenvolvedor back-end",
-    "description": "Portfólio de Leonardo Marinaro, desenvolvedor com foco em back-end e desenvolvimento de jogos."
+    "description": "Portfólio de Leonardo Marinaro, desenvolvedor com foco em back-end e desenvolvimento de jogos.",
+    "ogRole": "Desenvolvedor de Software · Back-end e Jogos",
+    "ogLocale": "pt_BR"
   },
   "layout": {
     "skipToContent": "Pular para o conteúdo"

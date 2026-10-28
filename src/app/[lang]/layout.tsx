@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { htmlLang, locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/server";
+import { siteUrl } from "@/lib/site";
 import { themeScript } from "@/lib/theme";
 import "../globals.css";
 
@@ -26,8 +27,20 @@ export function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary();
   return {
+    // Base for relative URLs in metadata, like the opengraph-image route
+    metadataBase: new URL(siteUrl),
     title: dict.metadata.title,
     description: dict.metadata.description,
+    // Shown when the link is shared (LinkedIn, WhatsApp, Slack...).
+    // The image itself comes from opengraph-image.tsx in this folder.
+    openGraph: {
+      type: "website",
+      siteName: "Leonardo Marinaro",
+      title: dict.metadata.title,
+      description: dict.metadata.description,
+      locale: dict.metadata.ogLocale,
+    },
+    twitter: { card: "summary_large_image" },
   };
 }
 
