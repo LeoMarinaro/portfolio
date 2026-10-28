@@ -1,0 +1,40 @@
+# Continuous integration: checks every push and pull request to main
+# on a clean machine, so problems show up before (or right after) a deploy.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A newer push to the same branch cancels the run that is still going
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm # reuses downloaded packages between runs
+
+      # Clean install from package-lock.json; postinstall also runs `prisma generate`
+      - run: npm ci
+
+      - run: npm run lint
+
+      # CI=true is set by GitHub, so Vitest runs once instead of watching
+      - run: npm test
+
+      # The build pre-renders pages, which reads projects from the database
+      # and repositories from GitHub. Both values come from repository secrets.
+      - run: npm run build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
