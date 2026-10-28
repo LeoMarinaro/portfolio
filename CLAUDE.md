@@ -44,7 +44,7 @@ Build a professional programming portfolio that demonstrates the owner's skills 
 
 ## Remaining work (as of 2026-10-28)
 1. Tests: done. Vitest 4.1.12 (pinned; 5.x is out but 4.1 was the agreed line), `npm test`, test files are `src/**/*.test.ts` next to the code. Claude wrote `summarizeLanguages` tests; the user wrote `getPreferredLocale` tests (now in `src/i18n/preferred-locale.ts`). Optional user exercise: `hasLocale` tests. Async Server Components are not supported by Vitest, so E2E (Playwright) is optional later.
-2. CI: GitHub Actions running lint, tests, and build on every push and PR.
+2. CI: done. `.github/workflows/ci.yml` runs lint, tests, and build on pushes and PRs to `main` (Node 24, actions v7). The build reads the database, so `DATABASE_URL` is a GitHub repository secret; `GITHUB_TOKEN` is the one Actions provides. Add the CI badge to the README.
 3. SEO & Lighthouse: sitemap.xml, robots.txt, `hreflang` alternates, Open Graph image, then a Lighthouse check.
 4. README: what it is, stack, architecture, how to run locally (.env vars, seed).
 - Small items: switch `sslmode=require` to `sslmode=verify-full` in `.env` and Vercel. Optional user exercises: wrap the seed in `prisma.$transaction`, and remember the chosen locale in a cookie read by the proxy. Optional: separate Neon branch for dev, and add descriptions plus the `portfolio` topic to other GitHub repos.
