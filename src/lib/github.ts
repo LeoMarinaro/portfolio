@@ -1,7 +1,7 @@
 // Reads public repository data from the GitHub REST API.
 import { cacheLife, cacheTag } from "next/cache";
 
-const GITHUB_USER = "LeoMarinaro";
+export const GITHUB_USER = "LeoMarinaro";
 
 // Repositories tagged with this topic on GitHub are listed on the site
 export const PORTFOLIO_TOPIC = "portfolio";

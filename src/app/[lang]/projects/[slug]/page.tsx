@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getDictionary, getLocale } from "@/i18n/server";
 import LanguageBar from "@/components/LanguageBar";
 import { formatMonthYear } from "@/lib/format";
-import { getRepo, getRepoLanguages } from "@/lib/github";
+import { GITHUB_USER, getRepo, getRepoLanguages } from "@/lib/github";
 import { summarizeLanguages } from "@/lib/languages";
 import { getProject, getProjectSlugs } from "@/lib/projects";
 
@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
           {project.githubRepo && (
             <li>
               <a
-                href={`https://github.com/LeoMarinaro/${project.githubRepo}`}
+                href={`https://github.com/${GITHUB_USER}/${project.githubRepo}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 items-center rounded-full border border-border px-4 transition-colors hover:border-accent hover:text-accent"
